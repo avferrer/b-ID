@@ -1,3 +1,8 @@
+<?php
+require_once 'lib/block_io.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +68,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                 <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="fa fa-btc"></i>
                                     <h5 class="text-muted vb">Bitcoin Wallet</h5> </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <h3 class="counter text-right m-t-15 text-danger">0.00000000</h3> </div> <!-- VALOR CARTEIRA -->
+                                    <h3 class="counter text-right m-t-15 text-danger"><?php $balance = $block_io->get_balance(array('label' => 'default'));  echo $balance->data->available_balance . "\n"; ?></h3> </div> <!-- VALOR CARTEIRA -->
                                 <div class="col-md-12 col-sm-12 col-xs-12">
 
                                 </div>
@@ -74,7 +79,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                             <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="fa fa-btc"></i>
                                 <h5 class="text-muted vb">Pendent Bitcoin</h5> </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-danger">0.00000000</h3> </div> <!-- VALOR CARTEIRA -->
+                                <h3 class="counter text-right m-t-15 text-danger">0</h3> </div> <!-- VALOR CARTEIRA -->
                             <div class="col-md-12 col-sm-12 col-xs-12">
 
                             </div>
@@ -85,7 +90,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                             <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="fa fa-btc"></i>
                                 <h5 class="text-muted vb">Addresses</h5> </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-danger">33mnnnSqxSPVsLmmVQP2PqMk4MA2oGgxkx</h3> </div> <!-- VALOR CARTEIRA -->
+                                <h3 class="counter text-right m-t-15 text-danger"><?php $address = $block_io->get_my_addresses(array('label' => '$user')); echo $address; ?></h3> </div> <!-- VALOR CARTEIRA -->
 
                         </div>
                 </div>
