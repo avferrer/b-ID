@@ -82,7 +82,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                     <div class="panel panel-info">
                                         <div class="panel-wrapper collapse in" aria-expanded="true">
                                             <div class="panel-body">
-                                                <form action="#">
+                                                <form action="save.php" method="POST">
                                                     <div class="form-body">
                                                         <h3 class="box-title">Person Info</h3>
                                                         <hr>
@@ -90,13 +90,13 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">First Name</label>
-                                                                    <input type="text" id="firstName" class="form-control" placeholder="John doe"> </div>
+                                                                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="John doe"/> </div>
                                                             </div>
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Last Name</label>
-                                                                    <input type="text" id="lastName" class="form-control" placeholder="Doe"> </div>
+                                                                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Doe"> </div>
                                                             </div>
                                                             <!--/span-->
                                                         </div>
@@ -105,11 +105,11 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Gender</label>
-                                                                    <select class="form-control">
-                                                                        <option value="">Male</option>
-                                                                        <option value="">Female
-                                                                        <option value="">Other</option>
-                                                                        <option value="">Nazist</option>
+                                                                    <select name="gender" class="form-control">
+                                                                        <option value="male">Male</option>
+                                                                        <option value="female">Female
+                                                                        <option value="other">Other</option>
+                                                                        <option value="nazist">Nazist</option>
 
 
                                                                     </select> <span class="help-block"> Select your gender </span> </div>
@@ -118,7 +118,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Date of Birth</label>
-                                                                    <input type="text" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                                    <input type="text" class="form-control" name="Birth" placeholder="dd/mm/yyyy"> </div>
                                                             </div>
                                                             <!--/span-->
                                                         </div>
@@ -170,20 +170,20 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-12 ">
                                                                 <div class="form-group">
                                                                     <label>Street</label>
-                                                                    <input type="text" class="form-control"> </div>
+                                                                    <input type="text" name="street" class="form-control"> </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>City</label>
-                                                                    <input type="text" class="form-control"> </div>
+                                                                    <input type="text" name="city" class="form-control"> </div>
                                                             </div>
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>State</label>
-                                                                    <input type="text" class="form-control"> </div>
+                                                                    <input type="text" name="state"  class="form-control"> </div>
                                                             </div>
                                                             <!--/span-->
                                                         </div>
@@ -192,7 +192,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Post Code</label>
-                                                                    <input type="text" class="form-control"> </div>
+                                                                    <input type="text" name="code" class="form-control"> </div>
                                                             </div>
                                                             <!--/span-->
                                                             <div class="col-md-6">
