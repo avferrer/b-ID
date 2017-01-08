@@ -6,6 +6,9 @@ $crumbs = explode('/', strrev($_SERVER["REQUEST_URI"]), 2);
 $homeurl = $site.strrev($crumbs[1]);
 $page = strrev($crumbs[0]);
 $link = ucfirst(str_replace( array(".php","-","_"), array(""," "," ") ,$page));
+$arrTmp = "";
+if(strstr($link,"?")) $arrTmp = explode("?",$link);
+if(is_array($arrTmp)) $link = $arrTmp[0];
 $bc = '<ol class="breadcrumb">';
 $bc .= '<li><a href="'.$homeurl.'/index.php'.'">'.$home.'</a>'.$sep.'</li>';
     if($link == "Index")
@@ -32,3 +35,5 @@ $bc .= '</ol>';
 return $bc;
 }
 ?>
+
+
