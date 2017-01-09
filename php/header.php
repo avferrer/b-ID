@@ -11,8 +11,8 @@
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
                     <li>
-                        <form role="search" class="app-search hidden-xs" action="/consulta.php">
-                            <input type="text" name="search" placeholder="Search ID..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
+                        <?php if($person["permission"] == 2) {?><form role="search" class="app-search hidden-xs" action="/consulta.php">
+                            <input type="text" name="search" placeholder="Search ID..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form><?php } ?>
                     </li>
                 </ul>
 

@@ -74,6 +74,20 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
             <div class="white-box">
                 <h3 class="box-title m-b-0">Blockchain Identification submit</h3>
                 <p class="text-muted m-b-30 font-13"> Enter in BID!</p>
+
+                <?php
+                  $e = $_GET["e"];
+                  if($e != NULL){
+                    $error["notnull"] = "<b>Oh no!</b> All of the fields are required!";
+                    $error["image"] = "<b>Oh no!</b> We need the front and back of your document!";
+                    if($e != "notnull" && $e != "image"){
+                      $error[$e] = "<b>Oh no!</b> We have a diferent error here!";
+                    }
+                    ?>
+                      <div class="alert alert-danger" role="alert"><?php echo $error[$e]; ?></div>
+                    <?php
+                  }
+                ?>
                 <div id="exampleBasic2" class="wizard">
                     <ul class="wizard-steps" role="tablist">
                         <li class="active" role="tab">
@@ -92,7 +106,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                     <div class="panel panel-info">
                                         <div class="panel-wrapper collapse in" aria-expanded="true">
                                             <div class="panel-body">
-                                                <form action="save.php" method="POST">
+                                                <form action="php/form/signup-save.php" method="POST">
                                                     <div class="form-body">
                                                         <h3 class="box-title">Person Info</h3>
                                                         <hr>
@@ -126,7 +140,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Date of Birth</label>
-                                                                    <input type="text" class="form-control" name="Birth" placeholder="dd/mm/yyyy"> </div>
+                                                                    <input type="text" class="form-control" name="birth" placeholder="mm/dd/yyyy" value="<?php if($person["birth"] != NULL){ echo date("m/d/Y",strtotime($person["birth"])); } ?>"> </div>
                                                             </div>
                                                             <!--/span-->
                                                         </div>
@@ -135,11 +149,11 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Relationship</label>
-                                                                    <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                        <option value="S">Single</option>
-                                                                        <option value="M">Married</option>
-                                                                        <option value="D">Divorced</option>
-                                                                        <option value="W">Widower</option>
+                                                                    <select name="relationship" class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                        <option value="S"<?php if($person["relationship"] == "S") { ?> selected="selected"<?php } ?>>Single</option>
+                                                                        <option value="M"<?php if($person["relationship"] == "M") { ?> selected="selected"<?php } ?>>Married</option>
+                                                                        <option value="D"<?php if($person["relationship"] == "D") { ?> selected="selected"<?php } ?>>Divorced</option>
+                                                                        <option value="W"<?php if($person["relationship"] == "W") { ?> selected="selected"<?php } ?>>Widower</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -147,26 +161,11 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Who are</label>
-                                                                    <div class="radio-list">
-                                                                        <label class="radio-inline p-0">
-                                                                            <div class="radio radio-info">
-                                                                                <input type="radio" name="radio" id="student" value="student">
-                                                                                <label for="student">Student </label>
-                                                                            </div>
-                                                                        </label>
-                                                                        <label class="radio-inline">
-                                                                            <div class="radio radio-info">
-                                                                                <input type="radio" name="radio" id="foreign" value="foreign">
-                                                                                <label for="foreign">Foreign </label>
-                                                                            </div>
-                                                                        </label>
-                                                                        <label class="radio-inline">
-                                                                            <div class="radio radio-info">
-                                                                                <input type="radio" name="radio" id="refugee" value="refugee">
-                                                                                <label for="refugee">Refugee </label>
-                                                                            </div>
-                                                                        </label>
-                                                                    </div>
+                                                                    <select name="type" class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                        <option value="student"<?php if($person["type"] == "student") { ?> selected="selected"<?php } ?>>Student</option>
+                                                                        <option value="foreign"<?php if($person["type"] == "foreign") { ?> selected="selected"<?php } ?>>Foreign</option>
+                                                                        <option value="refugee"<?php if($person["type"] == "refugee") { ?> selected="selected"<?php } ?>>Refugee</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <!--/span-->
@@ -200,13 +199,13 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Post Code</label>
-                                                                    <input type="text" name="code" class="form-control"> </div>
+                                                                    <input type="text" name="zip" class="form-control" value="<?php echo $person["zip"] ?>"> </div>
                                                             </div>
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Country</label>
-                                                                    <select class="form-control">
+                                                                    <select class="form-control" name="country">
                                                                         <option>--Select your Country--</option>
                                                                         <?php
                                                                           $countrySql = $instance->prepare("SELECT * FROM country");
@@ -223,6 +222,7 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                                     </div>
                                                     <div class="form-actions">
                                                        <center> <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button></center>
+                                                       <input type="hidden" name="id" value="<?php echo $person["id"]?>" />
                                                     </div>
                                                 </form>
                                             </div>
@@ -236,21 +236,26 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
 
                         <div class="wizard-pane" role="tabpanel">
                             <!-- Inicio Upload -->
-
-                            <div class="row">
-                                <div class="col-sm-6 ol-md-6 col-xs-12">
-                                    <div class="white-box">
-                                        <h3 class="box-title">Front</h3>
-                                        <label for="input-file-now-custom-3">Preferably the main document of your country with photo</label>
-                                        <input type="file" id="input-file-now-custom-2" class="dropify" data-height="500" data-default-file="plugins/bower_components/dropify/src/images/driver.jpg" /> </div>
-                                </div>
-                                <div class="col-sm-6 ol-md-6 col-xs-12">
-                                    <div class="white-box">
-                                        <h3 class="box-title">Back</h3>
-                                        <label for="input-file-now-custom-3"></label>
-                                        <input type="file" id="input-file-now-custom-3" class="dropify" data-height="500" data-default-file="plugins/bower_components/dropify/src/images/driverback.jpg" /> </div>
-                                </div>
-                            </div>
+                            <form action="php/form/uploadDocument.php" method="post">
+                              <div class="row">
+                                  <div class="col-sm-6 ol-md-6 col-xs-12">
+                                      <div class="white-box">
+                                          <h3 class="box-title">Front</h3>
+                                          <label for="input-file-now-custom-3">Preferably the main document of your country with photo</label>
+                                          <input type="file" name="front" id="input-file-now-custom-2" class="dropify" data-height="500" data-default-file="plugins/bower_components/dropify/src/images/driver.jpg" /> </div>
+                                  </div>
+                                  <div class="col-sm-6 ol-md-6 col-xs-12">
+                                      <div class="white-box">
+                                          <h3 class="box-title">Back</h3>
+                                          <label for="input-file-now-custom-3"></label>
+                                          <input type="file" name="back" id="input-file-now-custom-3" class="dropify" data-height="500" data-default-file="plugins/bower_components/dropify/src/images/driverback.jpg" /> </div>
+                                  </div>
+                              </div>
+                              <div class="form-actions">
+                                 <center> <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button></center>
+                                 <input type="hidden" name="id" value="<?php echo $person["id"]?>" />
+                              </div>
+                            </form>
                             <!-- Fim -->
                         </div>
                         <div class="wizard-pane" role="tabpanel">
