@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS 'block'.'user' (
+CREATE TABLE IF NOT EXISTS 'user' (
   'id' INT NOT NULL,
   'nm_name' VARCHAR(100) NULL,
   'lastName' VARCHAR(100) NULL,
@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS 'block'.'user' (
   'code' VARCHAR(90) NULL,
   'blockid' TEXT NULL,
   PRIMARY KEY ('id'))
-ENGINE = InnoDB;
+ENGINE = MariaDB;

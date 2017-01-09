@@ -1,11 +1,5 @@
 <?php
 
-/**
- *
- * OpenSSL functionality adapted from Jan Lindemann's BitcoinECDSA.php
- * @author Atif Nazir
- */
-
 if (!extension_loaded('gmp')) {
     throw new \Exception('GMP extension seems not to be installed');
 }
@@ -24,14 +18,15 @@ class BlockIo
     /**
      * Validate the given API key on instantiation
      */
-     
-    private $5190-4026-7d1d-d9e4;
+
+    private $api_key = '5190-4026-7d1d-d9e4';
     private $pin = "Marciano01";
     private $encryption_key = "";
-    private $version;
+    private $version = 2;
     private $withdrawal_methods;
     private $sweep_methods;
 
+    $block_io = new BlockIo($api_key, $pin, $version);
     public function __construct($api_key, $pin, $api_version = 2)
     { // the constructor
       $this->api_key = $api_key;
