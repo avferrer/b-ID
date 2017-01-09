@@ -160,17 +160,6 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
             <div class="col-md-6 col-lg-6 col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title">QR Code <br />
-<<<<<<< HEAD
-                        <center><?php
-                        generateQRwithGoogle($qrcode); // agora usaremos a biblioteca do Google para receber nossa informação.
-
-                        //agora sim, criamos uma função utilizando a biblioteca do Google para gerar nossa imagem
-                            function generateQRwithGoogle($url,$widthHeight ='330',$EC_level='L',$margin='0') {
-                                $url = urlencode($url);
-                                echo '<img src="http://chart.apis.google.com/chart?chs='.$widthHeight.'x'.$widthHeight.'&cht=qr&chld='.$EC_level.'|'.$margin.'&chl='.$url.'" alt="QR code" widthHeight="'.$widthHeight.'" widthHeight="'.$widthHeight.'"/>';
-                            }
-                        ?></center>
-=======
                         <?php
                         generateQRwithGoogle($qrcode); // agora usaremos a biblioteca do Google para receber nossa informação.
 
@@ -180,7 +169,6 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                 echo '<img src="http://chart.apis.google.com/chart?chs='.$widthHeight.'x'.$widthHeight.'&cht=qr&chld='.$EC_level.'|'.$margin.'&chl='.$url.'" alt="QR code" widthHeight="'.$widthHeight.'" widthHeight="'.$widthHeight.'"/>';
                             }
                         ?>
->>>>>>> origin/master
                         </div>
                     </h3>
                 </div>
