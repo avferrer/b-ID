@@ -5,9 +5,8 @@
             <div class="dropdown user-pro-body">
                 <div><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"></div> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
                 <ul class="dropdown-menu animated flipInY">
-                    <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                    <li><a href="../dashboard.php"><i class="ti-user"></i> My Profile</a></li>
                     <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                     <li role="separator" class="divider"></li>
@@ -24,16 +23,13 @@
             </span> </div>
                 <!-- /input-group -->
             </li>
-            <li> <a href="../consulta.php" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Consult information </a>
-
-            </li>
-            <li> <a href="../map-google.php" class="waves-effect"><i class="linea-icon linea-basic fa-fw " data-icon="7"></i><span class="hide-menu">  Analytcs</span></a>
+            <li> <a href="../dashboard.php" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </a>
 
             </li>
 
             <li> <a href="forms.php" class="waves-effect"><i data-icon="&#xe00b;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Forms<span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="signup-wizard.php">SignUp-Wizard</a></li>
+                    <li><a href="signup-wizard.php">SignUp Wizard</a></li>
 
                 </ul>
 
