@@ -1,6 +1,7 @@
 <?php
 include('lib/phpqrcode/qrlib.php');
 include('php/config.php');
+include("php/verify.php");
 
 $sqlPerson = $instance->prepare("SELECT * from user WHERE email = :p1");
 $sqlPerson->bindParam(":p1",$email);
@@ -76,7 +77,9 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                     <h3 class="counter text-right m-t-15 text-danger">
                                         <?php
-
+                                        $file = file_get_contents('https://block.io/api/v2/get_balance/?api_key=7d41-9571-22d5-807a&label='.sha1(md5($person["firstname"].$person["lastname"].$person["phone"])));
+                                        $object = json_decode($file);
+                                        echo $object->data->available_balance;
                                         ?>
 
 
@@ -105,12 +108,11 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                 <h3 class="counter text-right m-t-15 text-danger">
                                     <?php
-
-/*
-                                    $file = file_get_contents("https://block.io/api/v2/get_address_by/?api_key=7d41-9571-22d5-807a&label=".$first);
+                                    $file = file_get_contents('https://block.io/api/v2/get_address_by/?api_key=7d41-9571-22d5-807a&label='.sha1(md5($person["firstname"].$person["lastname"].$person["phone"])));
                                     $object = json_decode($file);
                                     echo $object->data->address;
-                                    */?>
+                                    $qrcode = $object->data->address;
+                                    ?>
                                     </h3> </div> <!-- VALOR CARTEIRA -->
 
                         </div>
@@ -148,10 +150,12 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="txt-oflo">evStarts Network</td>
-                                <td><span class="label label-megna label-rounded">Receive</span> </td>
-                                <td class="txt-oflo">January 08</td>
-                                <td><span class="text-success">0.00000000 BTC</span></td>
+                                <?php
+                                $file = file_get_contents('https://block.io/api/v2/get_address_by/?api_key=7d41-9571-22d5-807a&label='.sha1(md5($person["firstname"].$person["lastname"].$person["phone"])));
+                                $object = json_decode($file);
+                                echo $object->data->address;
+                                $qrcode = $object->data->address;
+                                ?>
                             </tr>
 
                             </tbody>
@@ -161,7 +165,15 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
             <div class="col-md-6 col-lg-6 col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title">QR Code <br />
-                       <center><img src="plugins/images/qrcode.jpg" ></center>
+                        <center><?php
+                        generateQRwithGoogle($qrcode); // agora usaremos a biblioteca do Google para receber nossa informação.
+
+                        //agora sim, criamos uma função utilizando a biblioteca do Google para gerar nossa imagem
+                            function generateQRwithGoogle($url,$widthHeight ='330',$EC_level='L',$margin='0') {
+                                $url = urlencode($url);
+                                echo '<img src="http://chart.apis.google.com/chart?chs='.$widthHeight.'x'.$widthHeight.'&cht=qr&chld='.$EC_level.'|'.$margin.'&chl='.$url.'" alt="QR code" widthHeight="'.$widthHeight.'" widthHeight="'.$widthHeight.'"/>';
+                            }
+                        ?></center>
                         </div>
                     </h3>
                 </div>
