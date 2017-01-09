@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -32,8 +32,8 @@
   <div class="login-box login-sidebar">
     <div class="white-box">
       <form class="form-horizontal form-material" id="loginform" action="php/form/login.php">
-        <a href="javascript:void(0)" class="text-center db"><img src="../plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="../plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>  
-        
+        <a href="javascript:void(0)" class="text-center db"><img src="../plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="../plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>
+
         <div class="form-group m-t-40">
           <div class="col-xs-12">
             <input class="form-control" type="text" required="" placeholder="E-mail" name="email">
@@ -60,7 +60,7 @@
 
         <div class="form-group m-b-0">
           <div class="col-sm-12 text-center">
-            <p>Don't have an account? <a href="register2.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
+            <p>Don't have an account? <a href="register.php" class="text-primary m-l-5"><b>Sign Up</b></a></p>
           </div>
         </div>
       </form>
