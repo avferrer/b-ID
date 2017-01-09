@@ -2,7 +2,7 @@
 
 $link = mysqli_connect("mysql.weblink.com.br", "u265443086_block", "t/n!02q9*T^Lo");
 
-class Conexao{
+class Connection{
 
 	private static $host;
 	private static $user;
@@ -45,9 +45,20 @@ class Conexao{
 }
 
 
-$conexao = new Conexao();
-$conexao->setHost("mysql.weblink.com.br");
-$conexao->setLogin("u265443086_block");
-$conexao->setPassword("t/n!02q9*T^Lo");
-$conexao->setDB("u265443086_block");
-$instancia = $conexao->getInstance();
+$connection = new Connection();
+$connection->setHost("mysql.weblink.com.br");
+$connection->setLogin("u265443086_block");
+$connection->setPassword("t/n!02q9*T^Lo");
+$connection->setDB("u265443086_block");
+$instance = $connection->getInstance();
+
+
+function searchCountry($id){
+	global $instance;
+	$select = $instance->prepare("SELECT * FROM country WHERE id = :p1");
+	$select->bindParam(":p1",$id);
+	$select->execute();
+	if($select->rowCount() > 0){
+		return $select->fetchAll()[0]["name"];
+	}
+}
