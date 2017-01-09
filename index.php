@@ -68,7 +68,14 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                 <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="fa fa-btc"></i>
                                     <h5 class="text-muted vb">Bitcoin Wallet</h5> </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <h3 class="counter text-right m-t-15 text-danger"><?php $balance = $block_io->get_balance(array('label' => 'default'));  echo $balance->data->available_balance . "\n"; ?></h3> </div> <!-- VALOR CARTEIRA -->
+                                    <h3 class="counter text-right m-t-15 text-danger">
+                                        <?php
+
+                                        ?>
+
+
+
+                                    </h3> </div> <!-- VALOR CARTEIRA -->
                                 <div class="col-md-12 col-sm-12 col-xs-12">
 
                                 </div>
@@ -90,7 +97,15 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                             <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="fa fa-btc"></i>
                                 <h5 class="text-muted vb">Addresses</h5> </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-danger"><?php $address = $block_io->get_my_addresses(array('label' => '$user')); echo $address; ?></h3> </div> <!-- VALOR CARTEIRA -->
+                                <h3 class="counter text-right m-t-15 text-danger">
+                                    <?php
+
+
+                                    $file = file_get_contents("https://block.io/api/v2/get_address_by/?api_key=7d41-9571-22d5-807a&label=".$first);
+                                    $object = json_decode($file);
+                                    echo $object->data->address;
+                                    ?>
+                                    </h3> </div> <!-- VALOR CARTEIRA -->
 
                         </div>
                 </div>
