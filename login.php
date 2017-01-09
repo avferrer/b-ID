@@ -31,8 +31,8 @@
 <section id="wrapper" class="login">
   <div class="login-box login-sidebar">
     <div class="white-box">
-      <form class="form-horizontal form-material" id="loginform" action="php/form/login.php">
-        <a href="javascript:void(0)" class="text-center db"><img src="../plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="../plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>
+      <form class="form-horizontal form-material" id="loginform" method="post" action="php/form/login.php">
+        <a href="javascript:void(0)" class="text-center db"><img src="plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>
 
         <div class="form-group m-t-40">
           <div class="col-xs-12">
@@ -43,14 +43,6 @@
           <div class="col-xs-12">
             <input class="form-control" type="password" required="" placeholder="Password" name="password">
           </div>
-        </div>
-        <div class="form-group">
-          <div class="col-md-12">
-            <div class="checkbox checkbox-primary pull-left p-t-0">
-              <input id="checkbox-signup" type="checkbox">
-              <label for="checkbox-signup"> Remember me </label>
-            </div>
-            <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div>
         </div>
         <div class="form-group text-center m-t-20">
           <div class="col-xs-12">

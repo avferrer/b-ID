@@ -46,7 +46,7 @@ if($password != $c_password){
 }
 $password = sha1(md5($password));
 
-$code = file_get_contents('https://block.io/api/v2/get_new_address/?api_key=7d41-9571-22d5-807a&label='.sha1(md5($first.$lastName.$phone."1")));
+$code = file_get_contents('https://block.io/api/v2/get_new_address/?api_key=7d41-9571-22d5-807a&label='.sha1(md5($first.$lastName.$phone)));
 $object = json_decode($code);
 $token = sha1(rand(0,30).$object->data->address);
 
@@ -55,7 +55,11 @@ $token = sha1(rand(0,30).$object->data->address);
 $sql = "INSERT INTO user (email, password, token, firstname, lastname, gender, phone, job, address, city, state, country, code) VALUES ('$email', '$password', '$token', '$first', '$lastName', '$gender', '$phone', '$job', '$street', '$city', '$state', '$country', '".$object->data->address."')";
 echo $sql;
 
-$c = $instancia->prepare($sql);
+$c = $instance->prepare($sql);
 $c->execute();
+
+session_start();
+$_SESSION["bid_email"] = $email;
+$_SESSION["bid_token"] = $token;
 
 header("location: /signup-wizard.php");
