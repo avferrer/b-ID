@@ -28,7 +28,7 @@
 <div class="preloader">
   <div class="cssload-speeding-wheel"></div>
 </div>
-<section id="wrapper" class="login">
+<section id="wrapper" class="login-register">
   <div class="login-box login-sidebar">
     <div class="white-box">
       <form class="form-horizontal form-material" id="loginform" method="post" action="php/form/login.php">

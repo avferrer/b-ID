@@ -150,12 +150,8 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                             </thead>
                             <tbody>
                             <tr>
-                                <?php
-                                $file = file_get_contents('https://block.io/api/v2/get_address_by/?api_key=7d41-9571-22d5-807a&label='.sha1(md5($person["firstname"].$person["lastname"].$person["phone"])));
-                                $object = json_decode($file);
-                                echo $object->data->address;
-                                $qrcode = $object->data->address;
-                                ?>
+
+
                             </tr>
 
                             </tbody>
