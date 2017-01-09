@@ -1,5 +1,4 @@
 <?php
-include('lib/phpqrcode/qrlib.php');
 include('php/config.php');
 include("php/verify.php");
 
