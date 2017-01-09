@@ -1,12 +1,19 @@
-CREATE TABLE IF NOT EXISTS 'block'.'user' (
-  'id' INT NOT NULL,
-  'nm_name' VARCHAR(100) NULL,
-  'lastName' VARCHAR(100) NULL,
-  'gender' VARCHAR(45) NULL,
-  'street' VARCHAR(45) NULL,
-  'city' VARCHAR(90) NULL,
-  'state' VARCHAR(90) NULL,
-  'code' VARCHAR(90) NULL,
-  'blockid' TEXT NULL,
-  PRIMARY KEY ('id'))
+CREATE TABLE IF NOT EXISTS user (
+  id INT NOT NULL AUTO_INCREMENT,
+  firstname VARCHAR(100) NOT NULL,
+  lastName VARCHAR(100) NOT NULL,
+  job VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  password VARCHAR(150) NOT NULL,
+  token VARCHAR(150) NOT NULL,
+  gender ENUM('M','F') NOT NULL,
+  address VARCHAR(100) NOT NULL,
+  phone VARCHAR(25) NOT NULL,
+  city VARCHAR(100) NOT NULL,
+  state VARCHAR(100) NOT NULL,
+  country VARCHAR(3) NOT NULL,
+  code VARCHAR(90) NULL,
+  blockid TEXT NULL,
+  permission INT(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (id))
 ENGINE = InnoDB;

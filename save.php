@@ -1,10 +1,6 @@
 <?php
 
-
-
-
-
-$link = mysqli_connect("mysql.weblink.com.br", "u265443086_block", "t/n!02q9*T^Lo");
+include('php/config.php');
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
