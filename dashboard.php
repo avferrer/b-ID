@@ -1,5 +1,5 @@
 <?php
-
+include('lib/phpqrcode/qrlib.php');
 
 
 ?>
@@ -12,12 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <title>Index - Global Blockchain Identification</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- animation CSS -->
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -100,15 +100,16 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                 <h3 class="counter text-right m-t-15 text-danger">
                                     <?php
 
-
+/*
                                     $file = file_get_contents("https://block.io/api/v2/get_address_by/?api_key=7d41-9571-22d5-807a&label=".$first);
                                     $object = json_decode($file);
                                     echo $object->data->address;
-                                    ?>
+                                    */?>
                                     </h3> </div> <!-- VALOR CARTEIRA -->
 
                         </div>
                 </div>
+                    <button class="btn btn-block btn-success btn-rounded">WALLET INFORMATIONS</button>
             </div>
         </div>
                 <!-- HISTORY BOX -->
@@ -151,6 +152,16 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                         </table> <a href="#">Check all the sales</a> </div>
                 </div>
             </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+                <div class="white-box">
+                    <h3 class="box-title">QR Code <br />
+                       <center><img src="plugins/images/qrcode.jpg" ></center>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+        </div>
+
 
 
     <!-- /.container-fluid -->
@@ -160,11 +171,11 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
 </div>
 <!-- /#wrapper -->
 <!-- jQuery -->
-<script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Menu Plugin JavaScript -->
-<script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
 <!--slimscroll JavaScript -->
 <script src="js/jquery.slimscroll.js"></script>
 <!--Wave Effects -->
@@ -172,9 +183,9 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
 <!-- Custom Theme JavaScript -->
 <script src="js/custom.min.js"></script>
 <!--Style Switcher -->
-<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 <!--Style Switcher -->
-<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>
