@@ -1,6 +1,12 @@
 <?php
 include('lib/phpqrcode/qrlib.php');
+include('php/config.php');
 
+$sqlPerson = $instance->prepare("SELECT * from user WHERE email = :p1");
+$sqlPerson->bindParam(":p1",$email);
+$sqlPerson->execute();
+
+$person = $sqlPerson->fetchAll()[0];
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +19,7 @@ include('lib/phpqrcode/qrlib.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
-    <title>Index - Global Blockchain Identification</title>
+    <title>Dashboard - Global Blockchain Identification</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
