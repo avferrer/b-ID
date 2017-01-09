@@ -13,7 +13,7 @@
 <!-- animation CSS -->
 <link href="css/animate.css" rel="stylesheet">
 <!-- Wizard CSS -->
-<link href="../plugins/bower_components/register-steps/steps.css" rel="stylesheet">
+<link href="plugins/bower_components/register-steps/steps.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="css/style.css" rel="stylesheet">
 <!-- color CSS -->
@@ -43,7 +43,7 @@
 <section id="wrapper" class="step-register">
   <div class="register-box">
     <div class="">
-       <a href="javascript:void(0)" class="text-center db m-b-40"><img src="../plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="../plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>
+       <a href="javascript:void(0)" class="text-center db m-b-40"><img src="plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="../plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>
       <!-- multistep form -->
         <form id="msform">
         <!-- progressbar -->
@@ -89,13 +89,13 @@
 </section>
 
 <!-- jQuery -->
-<script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Menu Plugin JavaScript -->
-<script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-<script src="../plugins/bower_components/register-steps/jquery.easing.min.js"></script>
-<script src="../plugins/bower_components/register-steps/register-init.js"></script>
+<script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<script src="plugins/bower_components/register-steps/jquery.easing.min.js"></script>
+<script src="plugins/bower_components/register-steps/register-init.js"></script>
 <!--slimscroll JavaScript -->
 <script src="js/jquery.slimscroll.js"></script>
 <!--Wave Effects -->
@@ -103,9 +103,9 @@
 <!-- Custom Theme JavaScript -->
 <script src="js/custom.min.js"></script>
 <!--Style Switcher -->
-<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 <!-- jQuery file upload -->
-<script src="../plugins/bower_components/dropify/dist/js/dropify.min.js"></script>
+<script src="plugins/bower_components/dropify/dist/js/dropify.min.js"></script>
 <script>
     $(document).ready(function () {
         // Basic
@@ -144,7 +144,7 @@
     });
 </script>
 <!-- Sweet-Alert  -->
-<script src="../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+<script src="plugins/bower_components/sweetalert/sweetalert.min.js"></script>
 <script type="text/javascript">
     (function () {
         $('#exampleBasic').wizard({
@@ -245,12 +245,12 @@
     })();
 </script>
 <!-- Form Wizard JavaScript -->
-<script src="../plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js"></script>
+<script src="plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js"></script>
 <!-- FormValidation -->
 <link rel="stylesheet" href="../plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.css">
 <!-- FormValidation plugin and the class supports validating Bootstrap form -->
-<script src="../plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js"></script>
-<script src="../plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js"></script>
+<script src="plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js"></script>
+<script src="plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js"></script>
 
 
 
