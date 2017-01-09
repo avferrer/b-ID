@@ -41,7 +41,7 @@
         </div>
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" type="password" required="" placeholder="Password" name="email">
+            <input class="form-control" type="password" required="" placeholder="Password" name="password">
           </div>
         </div>
         <div class="form-group">
