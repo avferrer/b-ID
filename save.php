@@ -23,11 +23,11 @@ $city = $_POST["city"];
 $state = $_POST["state"];
 
 $code = file_get_contents('https://block.io/api/v2/get_new_address/?api_key=7d41-9571-22d5-807a&label='.$first);
-$json_str = json_decode($code, true);
+
 
 //$code = curl_init('https://block.io/api/v2/get_new_address/?api_key=7d41-9571-22d5-807a&label='.$first);
 //$code = exec('https://block.io/api/v2/get_new_address/?api_key=7d41-9571-22d5-807a&label='.$first);
-if (mysqli_query($link,"INSERT INTO user (firstname, lastname, gender, Birth, radio, street, city, state, code) VALUES ('$first', '$lastName', '$gender','$Birth', '$radio', '$street', '$city', '$code')") === TRUE) {
+if (mysqli_query($link,"INSERT INTO block (firstname, lastname, gender, Birth, radio, street, city, state, code) VALUES ('$first', '$lastName', '$gender','$Birth', '$radio', '$street', '$city', '$code')") === TRUE) {
     printf("Table user successfully created.\n");
 }
 

@@ -476,13 +476,13 @@ include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
                                     <div class="white-box">
                                         <h3 class="box-title">Front</h3>
                                         <label for="input-file-now-custom-3">Preferably the main document of your country with photo</label>
-                                        <input type="file" id="input-file-now-custom-2" class="dropify" data-height="500" data-default-file="../plugins/bower_components/dropify/src/images/driver.jpg" /> </div>
+                                        <input type="file" id="input-file-now-custom-2" class="dropify" data-height="500" data-default-file="plugins/bower_components/dropify/src/images/driver.jpg" /> </div>
                                 </div>
                                 <div class="col-sm-6 ol-md-6 col-xs-12">
                                     <div class="white-box">
                                         <h3 class="box-title">Back</h3>
                                         <label for="input-file-now-custom-3"></label>
-                                        <input type="file" id="input-file-now-custom-3" class="dropify" data-height="500" data-default-file="../plugins/bower_components/dropify/src/images/driverback.jpg" /> </div>
+                                        <input type="file" id="input-file-now-custom-3" class="dropify" data-height="500" data-default-file="plugins/bower_components/dropify/src/images/driverback.jpg" /> </div>
                                 </div>
                             </div>
                             <!-- Fim -->
